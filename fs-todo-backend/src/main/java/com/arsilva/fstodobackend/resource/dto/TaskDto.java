@@ -1,25 +1,21 @@
-package com.arsilva.fstodobackend.models;
+package com.arsilva.fstodobackend.resource.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @AllArgsConstructor
-@Entity
+@Builder
 @Data
 @NoArgsConstructor
-public class Todo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class TaskDto {
     private String title;
     private String description;
     private Date targetDate;
     private Date creationDateTime;
     private boolean completed;
-    @ManyToOne
-    private User user;
+    private Long userId;
 }

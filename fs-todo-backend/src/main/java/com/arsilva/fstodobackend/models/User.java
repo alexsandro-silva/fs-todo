@@ -22,5 +22,5 @@ public class User {
     private String password;
     private Profile profile;
     @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Todo> tasks;
+    private List<Task> tasks;
 }
